@@ -7,6 +7,7 @@ angular.module('directory.services', [])
 				"id": 1,
 				"service": "2D Animation",
 				"content_type": "video",
+				"vPath" : "https://player.vimeo.com/video/122823950",
 				"managerId": 0,
 				"managerName": "",
 				"reports": 4,

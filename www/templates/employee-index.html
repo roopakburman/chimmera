@@ -14,7 +14,7 @@
             <item ng-repeat="employee in employees" type="item-text-wrap" href="#/employee/{{employee.id}}">
                 <h3>{{employee.service}} {{employee.department}}</h3>
                 <p>{{employee.title}}</p>
-				<p>{{employee.blog}}</p>
+				<p><iframe src="{{employee.vPath}}" width="500" height="281" allowfullscreen></iframe></p>
             </item>
             </item>
         </list>
