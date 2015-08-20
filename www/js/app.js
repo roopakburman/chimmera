@@ -35,4 +35,26 @@ angular.module('directory', ['ionic', 'directory.services', 'directory.controlle
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/iDatas');
 
-    });
+    })
+	.filter('trusted', ['$sce', function ($sce) {
+		return function(url) {
+			return $sce.trustAsResourceUrl(url);
+		};
+	}])
+	
+	.directive('myYoutube', function($sce) {
+	  return {
+		restrict: 'EA',
+		scope: { code:'=' },
+		replace: true,
+		template: '<div style="height:auto;"><iframe style="overflow:hidden;height:auto;width:auto" width="auto" height="auto" src="{{url}}" frameborder="0" allowfullscreen></iframe></div>',
+		link: function (scope) {
+			console.log('here');
+			scope.$watch('code', function (newVal) {
+			   if (newVal) {
+				   scope.url = $sce.trustAsResourceUrl("http://www.youtube.com/embed/" + newVal);
+			   }
+			});
+		}
+	  };
+	});	

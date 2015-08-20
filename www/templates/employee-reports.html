@@ -1,13 +1,18 @@
-<view title="'Direct Reports'">
+<view title="'Showcase'">
 
     <content has-header="true">
         <list>
-            <item ng-repeat="employee in employees" type="item-text-wrap" href="#/employee/{{employee.id}}">
-                <h3>{{employee.service}} {{employee.content_type}}</h3>
-                <p>{{employee.title}}</p>
-            </item>
+            <item ng-repeat="employee in employees" type="item-text-wrap"><!-- href="#/employee/{{employee.id}}" -->
+                <h3>{{employee.title}}</h3>
+                <p>{{employee.content_details}}</p>
+				<!-- <video controls>
+				   <source ng-src="{{video2D.vUrl | trusted}}" type="video/mp4"/>
+				</video> -->
+				<div class="video-container" my-youtube code="video2D"></div>
+<!-- 				<div class="row videowrapper">
+				<iframe ng-src="{{iData.vPath}}" autoplay='false' allowfullscreen></iframe>
+				</div> -->
             </item>
         </list>
     </content>
-
 </view>

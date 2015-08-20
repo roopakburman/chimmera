@@ -3,12 +3,10 @@ angular.module('directory.controllers', [])
     .controller('EmployeeIndexCtrl', function ($scope, EmployeeService) {
 
         $scope.searchKey = "";
-
         $scope.clearSearch = function () {
             $scope.searchKey = "";
             findAllEmployees();
         }
-
         $scope.search = function () {
             EmployeeService.findByName($scope.searchKey).then(function (employees) {
                 $scope.employees = employees;
@@ -35,4 +33,13 @@ angular.module('directory.controllers', [])
         EmployeeService.findByManager($stateParams.employeeId).then(function(employees) {
             $scope.employees = employees;
         });
+		$scope.video2D = [
+		{
+			"vUrl": "PYJS92m4mok"
+		},
+		{
+			"vUrl": "oHg5SJYRHA0"
+		}
+		];
+		 
     });

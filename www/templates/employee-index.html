@@ -1,8 +1,8 @@
-<view title="'Employees'">
+<view title="'Chimmera'">
 
     <div class="bar bar-subheader item-input-inset">
         <label class="item-input-wrapper">
-            <i class="icon ion-ios7-search placeholder-icon"></i>
+            <i class="icon ion-ios-search placeholder-icon"></i>
             <input id="searchKey" type="search" placeholder="Search" ng-model="searchKey" autocorrect="off" >
             <button class="button button-clear" ng-click="clearSearch()">X</button>
         </label>
@@ -10,11 +10,10 @@
     </div>
     <content has-header="true" has-subheader="true">
         <list>
-            <item ng-repeat="employee in employees" type="item-text-wrap" href="#/employee/{{employee.id}}">
-                <h3>{{employee.service}} {{employee.department}}</h3>
-                <p>{{employee.title}}</p>
-				<p><iframe src="{{employee.vPath}}" width="500" height="281" allowfullscreen></iframe></p>
-            </item>
+            <item ng-repeat="employee in employees" href="#/employee/{{employee.id}}"  ng-if="employee.iContent > 0">
+                <h2>{{employee.service}} <!-- {{employee.department}} --></h2>
+                <!-- <p>{{employee.title}}</p> -->
+                <p class="item-text-wrap">{{employee.content_details}}</p>
             </item>
         </list>
     </content>
