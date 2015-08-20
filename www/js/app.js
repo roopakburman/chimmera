@@ -5,7 +5,6 @@
 // 'directory.controllers' is found in controllers.js
 angular.module('directory', ['ionic', 'directory.services', 'directory.controllers'])
 
-
     .config(function ($stateProvider, $urlRouterProvider) {
 
         // Ionic uses AngularUI Router which uses the concept of states

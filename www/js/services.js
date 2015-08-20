@@ -1,5 +1,4 @@
 angular.module('directory.services', [])
-
     .factory('EmployeeService', function($q) {
         var iData = [
 			{
